@@ -20,9 +20,9 @@ class CommandLine():
         '''
 
         # Change descriptions later
-        self.parser = argparse.ArgumentParser(description = 'Process command line arguments for randomized motif search.',
+        self.parser = argparse.ArgumentParser(description = 'Perform a BLAST search with input fasta file as query.',
                                             add_help = True,
-                                            usage = '%(prog)s -i 10000 -p 1 -k 13 <input >output',
+                                            usage = '%(prog)s -e 0.000001 -f in.fasta >output',
                                             prefix_chars = '-'
                                             )
         self.parser.add_argument('-e', '--eValThreshold', action = 'store', type = float, default = 1e-5, help = 'E-value threshold used to filter homologues.')
