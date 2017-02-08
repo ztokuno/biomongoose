@@ -7,7 +7,7 @@ Dependencies:
 
     Biopython
  
-    Prody
+    ProDy 1.8.2
 
 Make sure all files are in the same directory.
 
