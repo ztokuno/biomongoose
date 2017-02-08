@@ -27,10 +27,8 @@ class BlastParser:
         '''Read all lines from BlastClient into memory. Split on alignment field. Take data only from the first hsp.'''
         pdb = hsps[0].split('pdb|')[1][:4]
         eVal = hsps[2]
-        query = hsps[3].strip()
         self.setPdb(pdb)
         self.setEVal(eVal)
-        self.setQuery(query)
 
     def __str__(self):
         '''Custom __str__ method to print important attributes of class.'''
