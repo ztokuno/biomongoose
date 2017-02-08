@@ -2,7 +2,9 @@
 BME 129B Bioinformatics Mongooses
 
 Dependencies:
+
   Biopython
+ 
   Prody
 
 Make sure all files are in the same directory.
