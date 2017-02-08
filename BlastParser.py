@@ -6,7 +6,6 @@ class BlastParser:
         '''Instantiate empty containers for attributes.'''
         self.pdb = None
         self.eVal = None
-        self.query = None
 
     def setPdb(self, pdb):
         '''Set PDB id.'''
