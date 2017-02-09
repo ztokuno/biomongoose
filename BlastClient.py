@@ -14,22 +14,17 @@ class BlastClient:
 
         if sys.argv[1].endswith('.fasta') or sys.argv[1].endswith('.fa') or sys.argv[1].endswith('.fna'):
             self.fa = SeqIO.read(sys.argv[1], format = 'fasta')
+            self.query = self.fa.seq
         else:
             self.query = sys.argv[1]
 
     def getQuery(self):
         '''Return query sequence.'''
-        if self.fa:
-            return self.fa.seq
-        else:
-            return self.query
+        return self.query
 
     def doBlast(self):
         '''Return BLAST results as a handle with multiple records in handle.'''
-        if self.fa:
-            blastResults = NCBIWWW.qblast(self.blastType, self.db, self.fa)
-        else:
-            blastResults = NCBIWWW.qblast(self.blastType, self.db, self.query)
+        blastResults = NCBIWWW.qblast(self.blastType, self.db, self.query)
         return blastResults
 
     def getHsps(self, blastResults):
