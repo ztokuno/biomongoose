@@ -25,11 +25,10 @@ class PfamClient:
         accession = list(pfamResults.keys())[0]
         conservedDomains = []
         for alignment in pfamResults[accession]['locations']:
-            start = alignment['ali_start']
-            end = alignment['ali_end']
+            start = int(alignment['ali_start'])
+            end = int(alignment['ali_end'])
             conservedDomains.append((start, end))
         return conservedDomains
-
 
 # pfamer = PfamClient()
 # pfamResults = pfamer.doPfamSearch('4xmm', 'MKRESHKHAEQARRNRLAVALHELASLIPAEWKQQNVSAAPSKATTVEAACRYIRHLQQNGST')
